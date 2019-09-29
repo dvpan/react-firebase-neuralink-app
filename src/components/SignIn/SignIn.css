@@ -1,0 +1,78 @@
+#signin-content {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
+}
+
+#signin-image-block {
+    flex: 3;
+    background-image:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 50%, rgba(0, 0, 0, 0.75) 100%),
+        url("../../signin_background.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+}
+
+#signin-image-main {
+    font-size: 23px;
+    font-weight: 600;
+    color: white;
+    padding-bottom: 25px;
+}
+
+#signin-image-secondary {
+    font-size: 17px;
+    color: var(--lines-color);
+}
+
+#signin-content-block {
+    flex: 4;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#signin-block-main {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20%;
+}
+
+#signin-block-secondary {
+    margin-bottom: 30px;
+    color: var(--secondary-text-color);
+}
+
+#signin-title-main {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#signin-title-secondary {
+    font-size: 15px;
+    color: var(--secondary-text-color);
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    #signin-image-block {
+        display: none;
+    }
+
+    #signin-block-main {
+        padding: 0px 15px;
+    }
+}

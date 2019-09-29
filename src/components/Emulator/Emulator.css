@@ -1,0 +1,39 @@
+.emulator-device-container {
+    padding: 10px 40px 180px 40px;
+}
+
+.emulator-device-card {
+    padding: 10px 20px;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.emulator-device-card div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.emulator-device-card>div {
+    display: flex;
+    align-items: center;
+}
+
+.emulator-device-card>div>span:first-child {
+    font-size: 20px;
+    width: 40px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.emulator-device-card>div>span:not(:first-child) {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.emulator-device-control {
+    display: flex;
+    margin-top: 10px;
+}

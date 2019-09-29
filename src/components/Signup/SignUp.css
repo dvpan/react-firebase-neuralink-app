@@ -1,0 +1,84 @@
+#signup-content {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
+}
+
+#signup-image-block {
+    flex: 3;
+    background-image:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 50%, rgba(0, 0, 0, 0.75) 100%),
+        url("../../signup_background.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+}
+
+#signup-image-main {
+    font-size: 23px;
+    font-weight: 600;
+    color: white;
+    padding-bottom: 25px;
+}
+
+#signup-image-secondary {
+    font-size: 17px;
+    color: var(--lines-color);
+}
+
+#signup-content-block {
+    flex: 4;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#signup-block-main {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 20%;
+}
+
+#signup-block-secondary {
+    margin-bottom: 30px;
+    color: var(--secondary-text-color);
+}
+
+#signup-title-main {
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#signup-title-secondary {
+    font-size: 17px;
+    color: var(--secondary-text-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #signup-image-block {
+        display: none;
+    }
+
+    #signup-content {
+        height: 100%;
+    }
+
+    #signup-block-main {
+        padding: 100px 15px;
+    }
+}

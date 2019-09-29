@@ -1,0 +1,16 @@
+.tab-button {
+    border: none;
+    background: transparent;
+    padding: 15px 30px;
+    color: var(--secondary-text-color);
+    cursor: pointer;
+    border-bottom: 1px solid var(--secondary-text-color);    
+    font-size: 15px;
+}
+
+.tab-button[active=true] {
+    color: var(--main-text-color);
+    padding-bottom: 13px;
+    border-bottom: 3px solid var(--blue-color);    
+    font-weight: 700;
+}

@@ -1,0 +1,40 @@
+label {
+    display: block;
+    color: var(--secondary-text-color);
+    margin-left: 1  px;
+    margin-bottom: 8px;
+}
+
+label:empty {
+    margin: 0;
+}
+
+label[error] {
+    color: var(--red-color);
+    font-size: 13px;
+}
+
+input {
+    border: 1px solid var(--lines-color);
+    border-radius: 7px;
+    font-size: 15px;
+    padding: 10px 13px;
+    transition: 0.2s;
+}
+
+input::placeholder {
+    color: var(--secondary-alt-text-color);
+}
+
+input:focus {
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+input[type="password"] {
+    font: small-caption;
+    font-size: 16px
+}
+
+input[error] {
+    border: 1px solid var(--red-color);
+}

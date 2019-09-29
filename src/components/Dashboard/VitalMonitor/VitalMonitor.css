@@ -1,0 +1,31 @@
+.vital-container {
+    padding: 20px 25px;
+    background: var(--blue-color);
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.vital-item-main {
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.vital-item-main-measurement {
+    color: white;
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+.vital-item-secondary {
+    color: white;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-left: 3px;
+}

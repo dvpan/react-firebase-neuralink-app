@@ -1,0 +1,47 @@
+#nav-main {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+    padding: 0px 28px;
+}
+
+#header-logo-main {
+    cursor: pointer;
+    mask: url("../../../ic_head_logo.svg") no-repeat 50% / contain;
+    background-color: var(--main-text-color);
+    height: 25px;
+    width: 200px;
+    margin-bottom: 5px;
+}
+
+.header-router {
+    display: flex;
+}
+
+.nav-button {
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--secondary-text-color);
+    padding: 22px 20px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+}
+
+.nav-button:hover {
+    color: var(--main-text-color);
+}
+
+.nav-button[active=true] {
+    font-weight: bold;
+    color: var(--main-text-color);
+}
+
+.nav-button-border[active=true] {
+    border-top: 4px solid var(--blue-color);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
