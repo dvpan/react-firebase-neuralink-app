@@ -23,7 +23,7 @@ const SidebarDesktop = (props) => {
                     <Link onMouseEnter={(e) => onMouseEnter(e, item)} onMouseLeave={(e) => onMouseLeave(e, item)} className='sidebar-item' active={`${item.to === pathname}`} to={item.to} key={item.to}>
                         <div className={item.iconClassName} ></div>
                         {
-                            item.to === pathname && item.to === hoverItem && <span className='sidebar-item-label'>{t(item.label)}</span>
+                            item.to === hoverItem && <span className='sidebar-item-label'>{t(item.label)}</span>
                         }
                     </Link>
                 ))

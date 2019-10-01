@@ -38,7 +38,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "webpack-bundle-analyzer": "^3.5.2"
-  }
+  "devDependencies": {}
 }

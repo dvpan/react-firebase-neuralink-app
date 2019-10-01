@@ -12,7 +12,7 @@ const SidebarMobile = (props) => {
                         <Link
                             active={`${item.to === pathname}`}
                             to={item.to} key={item.to}
-                            className='sidebar-item' >
+                            className='sidebar-mobile-item' >
                             <div className={item.iconClassName} ></div>
                         </Link>
                     ))
