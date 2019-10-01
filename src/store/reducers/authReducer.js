@@ -26,7 +26,7 @@ const authReducer = (state = initState, action) => {
         case 'SIGNUP_FAILURE': {
             return {
                 ...state,
-                signUpErr: 'Введенные данные некоректны',
+                signUpErr: 'Введенные данные некорректны',
             };
         }
         case 'SIGNUP_CLEAR_ERROR': {

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import {
     AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer
 } from 'recharts';
@@ -7,6 +8,8 @@ import {
 import './Chart.css'
 
 const Chart = (props) => {
+    const { t } = useTranslation();
+
     const colorFirst = 'colorFirst' + props.dataLabel.split(' ')[0];
     const colorSecond = 'colorSecond' + (props.dataLabelSecond && props.dataLabelSecond.split(' ')[0]);
 
@@ -14,15 +17,15 @@ const Chart = (props) => {
 
     if (props.data.length === 0) {
         return <div className='chart-action-container'>
-            <span className='chart-label-main'>{label}</span>
-            <span className='chart-label-secondary'><i>Нет данных за выбранный период</i></span>
+            <span className='chart-label-main'>{t(label)}</span>
+            <span className='chart-label-secondary'><i>{t("Нет данных за выбранный период")}</i></span>
         </div>
     }
 
     return (
         <div>
             <div className='chart-action-container'>
-                <span className='chart-label'>{label}</span>
+                <span className='chart-label'>{t(label)}</span>
             </div>
 
             <ResponsiveContainer className='chart-responsive-container'>

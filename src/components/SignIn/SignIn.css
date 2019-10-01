@@ -24,7 +24,6 @@
     font-size: 23px;
     font-weight: 600;
     color: white;
-    padding-bottom: 25px;
 }
 
 #signin-image-secondary {
@@ -58,13 +57,11 @@
 #signin-title-main {
     font-size: 20px;
     font-weight: 600;
-    margin-bottom: 15px;
 }
 
 #signin-title-secondary {
     font-size: 15px;
     color: var(--secondary-text-color);
-    margin-bottom: 15px;
 }
 
 @media (max-width: 768px) {

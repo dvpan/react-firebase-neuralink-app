@@ -1,11 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { signIn } from '../../store/actions/authActions';
 import Button from '../Button/Button';
 import TextField from '../TextField/TextField';
 
 import './SignIn.css'
+import H from 'components/Wrapper/H';
+import P from 'components/Wrapper/P';
+import Link from 'components/Wrapper/Link';
 
 class SignIn extends React.Component {
     state = {
@@ -27,26 +30,26 @@ class SignIn extends React.Component {
         if (this.props.signInSuccess) return <Redirect to='/dashboard/health' />
 
         document.title = 'Вход - Нейролинк';
-        
+
         return (
             <div id='signin-content'>
                 <div id='signin-image-block'>
-                    <div id='signin-image-main'>
+                    <H level={1} id='signin-image-main'>
                         Революционно новый нейроинтерфейс
-                    </div>
-                    <div id='signin-image-secondary'>
+                    </H>
+                    <P id='signin-image-secondary'>
                         Наш многолетний опыт (более 25 лет) и профессионализм дают возможность создавать технологии нового уровня и расширяют границы для разработчиков и исследователей в самых разных областях человеческих знаний.
-                    </div>
+                    </P>
                 </div>
                 <div id='signin-content-block'>
                     <div />
                     <div id='signin-block-main'>
-                        <div id='signin-title-main'>
+                        <H level={3} id='signin-title-main'>
                             Вход
-                        </div>
-                        <div id='signin-title-secondary' className='item-vert'>
-                            Введите свои данные ниже.
-                        </div>
+                        </H>
+                        <P id='signin-title-secondary' className='item-vert'>
+                            Введите свои данные ниже
+                        </P>
 
                         <TextField
                             id='email'
@@ -56,7 +59,7 @@ class SignIn extends React.Component {
                             fullwidth
                             marginVertical
                         />
-                        
+
                         <TextField
                             id='password'
                             type="password"
@@ -75,10 +78,10 @@ class SignIn extends React.Component {
                             Вход
                         </Button>
                     </div>
-                    <div id='signin-block-secondary'>
+                    <P id='signin-block-secondary'>
                         Еще нет аккаунта?
-                        <Link className='link-blue' to='/signup'> Зарегистрироваться </Link>
-                    </div>
+                        <Link className='link-blue' to='/signup'> Зарегистрироваться</Link>
+                    </P>
                 </div>
             </div>
         )

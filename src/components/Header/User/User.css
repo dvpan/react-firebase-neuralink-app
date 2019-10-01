@@ -21,7 +21,7 @@
     cursor: pointer;
 }
 
-.nav-user-info{
+.nav-user-popup{
     width: 200px;
     background-color: white;
     position: absolute;
@@ -38,20 +38,17 @@
     visibility: visible;
 }
 
-.nav-user-info > * {
+.nav-user-popup > * {
     width: 100%;
 }
 
-.nav-user-info[variant=false]{
+.nav-user-popup[variant=false]{
     opacity: 0;
     visibility: hidden;
 }
 
-.nav-user-info[variant=true]{
-    
-}
 
-.nav-user-info > button:not(:first-child){
+.nav-user-popup > button:not(:first-child){
     margin-top: 10px;
 }
 

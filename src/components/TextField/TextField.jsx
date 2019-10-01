@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next'
 import './TextField.css';
 
 const TextField = (props) => {
     const [fieldEmptyError, setFieldEmptyError] = useState(null);
+    const { t, i18n } = useTranslation();
 
     const handleChange = (e) => {
         props.onChange && props.onChange(e);
@@ -22,7 +24,7 @@ const TextField = (props) => {
         props.onBlur && props.onBlur(e);
     }
 
-    const { label, fullwidth, marginHorizontal, marginVertical, error, className, ...otherProps } = props;
+    const { label, fullwidth, marginHorizontal, marginVertical, error, className, placeholder, ...otherProps } = props;
 
     let classNameRoot = '';
     if (className) classNameRoot += ' ' + className;
@@ -32,15 +34,15 @@ const TextField = (props) => {
 
     const visibleError = error ? error : fieldEmptyError;
     const content = visibleError ? visibleError : label;
-
     return (
         <div className={classNameRoot}>
             <label error={visibleError} htmlFor={otherProps.id}>
-                {content}
+                {t(content)}
             </label>
 
             <input
                 {...otherProps}
+                placeholder={t(placeholder)}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
                 onChange={handleChange}

@@ -6,6 +6,8 @@ import Button from '../Button/Button';
 import TextField from '../TextField/TextField';
 
 import './SignUp.css'
+import H from 'components/Wrapper/H';
+import P from 'components/Wrapper/P';
 
 class SignUp extends React.Component {
     state = {
@@ -67,22 +69,22 @@ class SignUp extends React.Component {
         return (
             <div id='signup-content'>
                 <div id='signup-image-block'>
-                    <div id='signup-image-main'>
+                    <H level={1} id='signup-image-main'>
                         Революционно новый нейроинтерфейс
-                    </div>
-                    <div id='signup-image-secondary'>
+                    </H>
+                    <P id='signup-image-secondary'>
                         Наш многолетний опыт (более 25 лет) и профессионализм дают возможность создавать технологии нового уровня и расширяют границы для разработчиков и исследователей в самых разных областях человеческих знаний.
-                    </div>
+                    </P>
                 </div>
                 <div id='signup-content-block'>
                     <div />
                     <div id='signup-block-main'>
-                        <div id='signup-title-main'>
+                        <H level={3} id='signup-title-main'>
                             Добро пожаловать на НЕЙРОЛИНК
-                        </div>
-                        <div id='signup-title-secondary'>
-                            Перед началом работы заполните форму ниже.
-                        </div>
+                        </H>
+                        <P id='signup-title-secondary'>
+                            Перед началом работы заполните форму ниже
+                        </P>
 
                         <TextField
                             id='firstName'
@@ -151,10 +153,10 @@ class SignUp extends React.Component {
                             Зарегистрироваться
                         </Button>
                     </div>
-                    <div id='signup-block-secondary'>
+                    <P id='signup-block-secondary'>
                         Уже есть аккаунт?
-                        <Link className='link-blue' to='/signin'> Войти </Link>
-                    </div>
+                        <Link className='link-blue' to='/signin'> Войти</Link>
+                    </P>
                 </div>
             </div>
         )

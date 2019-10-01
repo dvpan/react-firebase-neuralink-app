@@ -4,7 +4,7 @@ import HeaderMain from './Desktop/HeaderMain';
 import HeaderClean from './Clean/HeaderClean';
 import HeaderMobile from './Mobile/HeaderMobile';
 
-const Header = (props) => {
+const HeaderComponent = (props) => {
     const { pathname } = props.location;
 
     switch (pathname) {
@@ -20,4 +20,4 @@ const Header = (props) => {
     }
 }
 
-export default withRouter(Header);
+export default withRouter(HeaderComponent);

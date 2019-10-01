@@ -6,6 +6,7 @@ import { firestoreConnect } from 'react-redux-firebase';
 import Chart from 'components/Dashboard/Chart/Chart';
 import TabButton from 'components/Dashboard/Health/TabButton/TabButton';
 import HealthCard from './HealthCard';
+import H from 'components/Wrapper/H';
 
 import './HealthTab.css';
 
@@ -29,10 +30,10 @@ const HealthTab = ({ health, healthFilter, healthLastItem, setFilter }) => {
     document.title = 'Здоровье - Нейролинк';
 
     const { type } = healthFilter;
-    
+
     return (
         <div className='dashboard-container'>
-            <h1> Здоровье </h1>
+            <H>Здоровье</H>
 
             <div>
                 <TabButton onClick={() => setFilter('week')} selected={type === 'week'}>Текущая неделя</TabButton>

@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import { Trans } from "react-i18next";
 import './Button.css'
 
 const Button = (props) => {
@@ -18,7 +19,9 @@ const Button = (props) => {
 
     return (
         <button className={classNameRoot} {...otherProps}>
-            {content}
+            <Trans>
+                {content}
+            </Trans>
         </button>
     )
 }

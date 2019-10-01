@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 import './ProgressBar.css'
 
@@ -12,6 +13,7 @@ const ProgressBar = (props) => {
         return 'rgb(' + result + ')';
     };
 
+    const { t } = useTranslation();
     let { progress } = props;
     if (props.reverse) progress = 1 - progress;
 
@@ -21,7 +23,7 @@ const ProgressBar = (props) => {
             {
                 props.title &&
                 <div className='pb-title'>
-                    <span>{props.title}</span>
+                    <span>{t(props.title)}</span>
                     {
                         progress && <span>{`${Math.floor(progress * 100)}%`}</span>
                     }

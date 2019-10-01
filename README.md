@@ -1,5 +1,6 @@
 
-<h1> НЕЙРОЛИНК is a sample app built using React, Redux and Firebase. </h1>
+<h1> НЕЙРОЛИНК is a sample app built using React, Redux and Firebase </h1>
+Live demo is available here: https://neuralink-net.firebaseapp.com
 
 <h2> Stack </h2>
 <ul>
@@ -16,6 +17,5 @@
     <li> Register </li>
     <li> Create data with "emulator" </li>
     <li> View and filter data on the dashboard </li>
+    <li> Change localization </li>
 </ul>
-
-Live demo is available here: https://neuralink-net.firebaseapp.com

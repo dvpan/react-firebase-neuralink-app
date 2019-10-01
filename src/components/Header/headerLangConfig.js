@@ -1,0 +1,1 @@
+export default [{ name: 'English', icon: 'EN', lang: 'en' }, { name: 'Русский', icon: 'РУС', lang: 'ru' }];

@@ -4,16 +4,13 @@ import PropTypes from 'prop-types';
 import './HamButton.css';
 
 const HamButton = (props) => {
-    const [active, setActive] = useState(false);
 
     const clickHandler = (e) => {
-        setActive(!active);
-
-        props.onToggle && props.onToggle(!active);
+        props.onToggle && props.onToggle();
     }
 
     return (
-        <svg className={'ham'} active={`${active}`} onClick={clickHandler} viewBox="0 0 100 100" >
+        <svg className={'ham'} active={`${props.active}`} onClick={clickHandler} viewBox="0 0 100 100" >
             <path
                 className="line top"
                 d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
@@ -28,6 +25,7 @@ const HamButton = (props) => {
 }
 
 HamButton.propTypes = {
+    active: PropTypes.bool,
     onToggle: PropTypes.func
 }
 

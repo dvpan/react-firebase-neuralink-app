@@ -3,8 +3,10 @@ import { newMeasurement } from '../../store/actions/healthActions';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
+import { withTranslation } from 'react-i18next';
 import Button from '../Button/Button';
 import './Emulator.css';
+import H from 'components/Wrapper/H';
 
 class Emulator extends PureComponent {
 
@@ -43,36 +45,37 @@ class Emulator extends PureComponent {
         document.title = 'Эмулятор - Нейролинк';
 
         const { heartbeat, bloodPressureTop, bloodPressureBottom, freshness, intoxication, thirsty } = this.state;
+        const { t } = this.props;
         return (
             <div className='emulator-device-container'>
-                <h1 >
+                <H>
                     Добавить случайные данные
-                </h1>
+                </H>
 
                 <div className='emulator-device-card'>
                     <div>
                         <span role="img" aria-label="beating-heart">💓</span>
-                        Сердцебиение:
-                        <span> {`${heartbeat} уд./мин`} </span>
+                        {t("Пульс")}:
+                        <span> {`${heartbeat} ${t("уд./мин")}`} </span>
                     </div>
                     <div>
                         <span role="img" aria-label="drop-of-blood">🩸</span>
-                        Кровяное давление:
-                        <span> {`${bloodPressureTop}/${bloodPressureBottom} мм.рт.ст`}  </span>
+                        {t("Кровяное давление")}:
+                        <span> {`${bloodPressureTop}/${bloodPressureBottom} ${t("мм.рт.ст")}`}  </span>
                     </div>
                     <div>
                         <span role="img" aria-label="tired-face">😫</span>
-                        Усталость:
+                        {t("Усталость")}:
                         <span> {`${Math.floor(100 - freshness * 100)}%`} </span>
                     </div>
                     <div>
                         <span role="img" aria-label="beer-mug">🍺</span>
-                        Трезвость:
+                        {t("Трезвость")}:
                         <span> {`${Math.floor(100 - intoxication * 100)}%`} </span>
                     </div>
                     <div>
                         <span role="img" aria-label="splashing-water">💦</span>
-                        Жажда:
+                        {t("Жажда")}:
                         <span> {`${Math.floor(thirsty * 100)}%`} </span>
                     </div>
                 </div>
@@ -97,4 +100,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default compose(connect(mapStateToProps, mapDispatchToProps), firestoreConnect(['health']))(Emulator);
+export default compose(connect(mapStateToProps, mapDispatchToProps), firestoreConnect(['health']), withTranslation())(Emulator);

@@ -10,6 +10,10 @@ import User from '../User/User';
 import { routes } from './headerRoutes.js';
 
 import './HeaderMain.css';
+import { Trans, withTranslation } from 'react-i18next';
+import { compose } from 'C:/Users/danpa/AppData/Local/Microsoft/TypeScript/3.6/node_modules/redux';
+import LangPicker from '../LangPicker/LangPicker';
+import headerLangConfig from '../headerLangConfig';
 
 class HeaderMain extends React.Component {
     render() {
@@ -19,10 +23,15 @@ class HeaderMain extends React.Component {
 
         return (
             <nav id='nav-main'>
-                <Link to='/'>
-                    <div id='header-logo-main' />
-                </Link>
-                <span className='header-router'>
+                <span>
+                    <Link to='/'>
+                        <div id='header-logo-main' />
+                    </Link>
+
+                    <LangPicker lang={headerLangConfig} />
+                </span>
+
+                <span>
                     {
                         routes.map(item => {
                             if (!auth.uid && item.isAuthNeeded) return null;
@@ -30,7 +39,7 @@ class HeaderMain extends React.Component {
                             return (
                                 <Link className='item-hor' to={item.to} key={item.to}>
                                     <button className='nav-button' active={`${pathname === (item.to)}`}>
-                                        {item.label}
+                                        <Trans>{item.label}</Trans>
                                     </button>
                                     <div className='nav-button-border' active={`${pathname === (item.to)}`}></div>
                                 </Link>
@@ -57,7 +66,8 @@ class HeaderMain extends React.Component {
                 subMenu
                 signOut={() => { this.props.signOut(); }}
                 openEmulator={() => this.props.history.push("/emulator")}
-                profile={profile}
+                firstName={profile.firstName}
+                lastName={profile.lastName}
             />
         )
 
@@ -87,4 +97,4 @@ const mapActionToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapActionToProps)(withRouter(HeaderMain));
+export default compose(connect(mapStateToProps, mapActionToProps), withTranslation())(withRouter(HeaderMain));

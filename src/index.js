@@ -8,6 +8,7 @@ import createReduxStore from './store/createReduxStore';
 import { Provider } from 'react-redux'
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import { createFirestoreInstance } from 'redux-firestore';
+import i18n from "./i18n";
 
 import './index.css';
 

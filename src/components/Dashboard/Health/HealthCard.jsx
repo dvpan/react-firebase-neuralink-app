@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import ProgressBar from 'components/ProgressBar/ProgressBar';
 import VitalMonitor from '../VitalMonitor/VitalMonitor';
 
-const HealthCard = (props) => {
+
+const HealthCard = (props) => {    
+    const { t } = useTranslation();
+
     if (!props.time) {
         return <h3><i>Данные отсутствуют</i></h3>
     };
+
 
     return (
         <React.Fragment>
@@ -22,9 +27,9 @@ const HealthCard = (props) => {
 
             {
                 props.time &&
-                <div className='health-chart-date'>
-                    {`Таким ваше здоровье было ${new Date(props.time).toLocaleString()}`}
-                </div>
+                <p className='health-chart-date'>
+                    {`${t("Таким ваше здоровье было")} ${new Date(props.time).toLocaleString()}`}
+                </p>
             }
         </React.Fragment>
     )

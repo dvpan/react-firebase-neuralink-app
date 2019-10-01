@@ -1,4 +1,6 @@
 #nav-clean {
+    display: flex;
+    justify-content: flex-start;
     position: absolute;
     box-sizing: border-box;
     padding: 38px 28px 0px 28px;
@@ -6,6 +8,7 @@
 }
 
 #header-logo-clean {
+    display: inline-block;
     cursor: pointer;
     mask: url("../../../ic_head_logo.svg") no-repeat 50% / contain;
     background-color: white;
@@ -19,10 +22,11 @@
         padding: 28px;
         box-sizing: border-box;
         background-color: white;
+        justify-content: center;
     }
 
     #header-logo-clean {
-        color: var(--main-text-color);
+        background-color: var(--main-text-color);
         display: flex;
         justify-content: center;
     }

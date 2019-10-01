@@ -8,6 +8,9 @@ import User from './../User/User';
 
 import './HeaderMobile.css';
 import HamButton from './HamButton/HamButton';
+import { compose } from 'C:/Users/danpa/AppData/Local/Microsoft/TypeScript/3.6/node_modules/redux';
+import { withTranslation } from 'react-i18next';
+import LangPicker from '../LangPicker/LangPicker';
 
 class HeaderMobile extends React.Component {
     state = {
@@ -20,25 +23,31 @@ class HeaderMobile extends React.Component {
     }
 
     render() {
+        const { isContentVisible, lastLocation } = this.state;
         let { pathname } = this.props.location;
         if (pathname.includes('dashboard')) pathname = '/dashboard';
 
-        if (!this.state.lastLocation) {
+        if (!lastLocation) {
             this.setState({ lastLocation: pathname });
         } else {
-            if (this.state.lastLocation !== pathname) {
+            if (lastLocation !== pathname) {
                 this.setState({ isContentVisible: false, lastLocation: pathname })
             }
         }
 
         return (
             <nav id='nav-mobile'>
+                
                 <Link to='/'>
                     <div id='header-logo-mobile' />
                 </Link>
-                <HamButton onToggle={this.changeHandler} />
+                
+                <LangPicker lang={[{ name: 'English', icon: 'EN', lang: 'en' }, { name: 'Русский', icon: 'РУС', lang: 'ru' }]} />
 
-                <div className='nav-mobile-content' visible={`${this.state.isContentVisible}`}>
+
+                <HamButton active={isContentVisible} onToggle={this.changeHandler} />
+
+                <div className='nav-mobile-content' visible={`${isContentVisible}`}>
                     {this.getAuthLayout()}
                 </div>
             </nav>
@@ -46,7 +55,7 @@ class HeaderMobile extends React.Component {
     }
 
     getAuthLayout = () => {
-        const { auth, profile } = this.props;
+        const { t, auth, profile } = this.props;
 
         if (!auth.isLoaded) return <div />;
 
@@ -58,23 +67,23 @@ class HeaderMobile extends React.Component {
 
                 <Link className='nav-mobile-item' to='/dashboard'>
                     <i className="icon-tachometer" aria-hidden="true"></i>
-                    Панель управления
+                    {t("Панель управления")}
                 </Link>
 
                 <Link className='nav-mobile-item' to='/emulator'>
                     <i className="icon-flask"></i>
-                    Эмулятор
+                    {t("Эмулятор")}
                 </Link>
 
 
                 <Link className='nav-mobile-item' to='/'>
                     <i className="icon-home" aria-hidden="true"></i>
-                    Главная
+                    {t("Главная")}
                 </Link>
 
                 <Link className='nav-mobile-item' to='/' onClick={() => this.props.signOut()}>
                     <i className="icon-sign-out" aria-hidden="true"></i>
-                    Выход
+                    {t("Выход")}
                 </Link>
             </React.Fragment>
         )
@@ -83,12 +92,12 @@ class HeaderMobile extends React.Component {
             <React.Fragment>
                 <Link className='nav-mobile-item' to='/signin'>
                     <i className="icon-sign-in" aria-hidden="true"></i>
-                    Вход
+                    {t("Вход")}
                 </Link>
 
                 <Link className='nav-mobile-item' to='/signup'>
                     <i className="icon-user-plus" aria-hidden="true"></i>
-                    Регистрация
+                    {t("Регистрация")}
                 </Link>
             </React.Fragment>
         )
@@ -108,4 +117,4 @@ const mapActionToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapActionToProps)(withRouter(HeaderMobile));
+export default compose(connect(mapStateToProps, mapActionToProps), withTranslation())(withRouter(HeaderMobile));
