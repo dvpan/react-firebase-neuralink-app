@@ -1,9 +1,10 @@
 import React from 'react';
-import { Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 const P = (props) => {
     const { children, ...otherProps } = props;
-    return <p {...otherProps}> <Trans>{children}</Trans></p>;
+    const { t } = useTranslation();
+    return <p {...otherProps}>{t(children)}/</p>;
 }
 
 export default P;

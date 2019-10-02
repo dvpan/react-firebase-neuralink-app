@@ -5,7 +5,7 @@ import './TextField.css';
 
 const TextField = (props) => {
     const [fieldEmptyError, setFieldEmptyError] = useState(null);
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     const handleChange = (e) => {
         props.onChange && props.onChange(e);

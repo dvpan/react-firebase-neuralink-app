@@ -2,13 +2,15 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
 import { signIn } from '../../store/actions/authActions';
+import { withTranslation } from 'react-i18next';
 import Button from '../Button/Button';
 import TextField from '../TextField/TextField';
-
-import './SignIn.css'
 import H from 'components/Wrapper/H';
 import P from 'components/Wrapper/P';
 import Link from 'components/Wrapper/Link';
+
+import './SignIn.css'
+import { compose } from 'C:/Users/danpa/AppData/Local/Microsoft/TypeScript/3.6/node_modules/redux';
 
 class SignIn extends React.Component {
     state = {
@@ -29,7 +31,8 @@ class SignIn extends React.Component {
     render() {
         if (this.props.signInSuccess) return <Redirect to='/dashboard/health' />
 
-        document.title = 'Вход - Нейролинк';
+        const { t } = this.props;
+        document.title = t('Вход - Нейролинк');
 
         return (
             <div id='signin-content'>
@@ -102,4 +105,4 @@ const mapActionToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapActionToProps)(SignIn);
+export default compose(connect(mapStateToProps, mapActionToProps), withTranslation())(SignIn);

@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Dashboard from './components/Dashboard/Dashboard';
 
@@ -14,6 +14,7 @@ import Emulator from './components/Emulator/Emulator';
 import requiresAuth from 'components/requiresAuth';
 
 import './App.css';
+import PageNotFound from 'components/PageNotFound/PageNotFound';
 
 function App() {
   return (
@@ -25,14 +26,18 @@ function App() {
           <div id="main-content">
             <Sidebar />
 
-            <Route exact path="/" component={Home} />
-            <Route path="/signin" component={SignIn} />
-            <Route path="/signup" component={SignUp} />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/signin" component={SignIn} />
+              <Route path="/signup" component={SignUp} />
 
-            <Route path="/emulator" component={requiresAuth(Emulator)} />
+              <Route path="/emulator" component={requiresAuth(Emulator)} />
 
-            <Route exact path="/dashboard/" component={requiresAuth(Dashboard)} />
-            <Route path="/dashboard/health" component={requiresAuth(HealthTab)} />
+              <Route exact path="/dashboard/" component={requiresAuth(Dashboard)} />
+              <Route path="/dashboard/health" component={requiresAuth(HealthTab)} />
+
+              <Route component={PageNotFound} />
+            </Switch>
           </div>
           <Footer />
         </div>

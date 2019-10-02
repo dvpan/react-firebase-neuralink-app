@@ -1,20 +1,17 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
+import { useTranslation } from 'react-i18next';
 import Link from 'components/Wrapper/Link';
 import Button from '../../components/Button/Button'
 import TextField from '../../components/TextField/TextField'
 import SocialButton from '../SocialButton/SocialButton';
-
-import { useTranslation } from 'react-i18next';
-
-
-import './Footer.css';
 import H from 'components/Wrapper/H';
 import P from 'components/Wrapper/P';
 
+import './Footer.css';
+
 const Footer = (props) => {
     const { pathname } = props.location;
-    const { t } = useTranslation();
 
     if (pathname.includes("dashboard")) return null;
     return (

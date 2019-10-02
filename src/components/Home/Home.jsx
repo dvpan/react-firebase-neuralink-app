@@ -9,7 +9,7 @@ import './Home.css';
 const Home = (props) => {
     const { t } = useTranslation();
 
-    document.title = 'Нейролинк';
+    document.title = t('Нейролинк');
 
     return (
         <div className="home-container">

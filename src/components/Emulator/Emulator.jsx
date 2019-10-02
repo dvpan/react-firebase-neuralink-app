@@ -42,10 +42,12 @@ class Emulator extends PureComponent {
     }
 
     render() {
-        document.title = 'Эмулятор - Нейролинк';
 
         const { heartbeat, bloodPressureTop, bloodPressureBottom, freshness, intoxication, thirsty } = this.state;
         const { t } = this.props;
+        
+        document.title = t( 'Эмулятор - Нейролинк');
+        
         return (
             <div className='emulator-device-container'>
                 <H>

@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import './Button.css'
 
 const Button = (props) => {
     const { className, fullWidth, marginHorizontal, marginVertical, ...otherProps } = props;
+    const { t } = useTranslation();
 
     let content = props.children;
     if (props.error) content = props.error;
@@ -19,9 +20,7 @@ const Button = (props) => {
 
     return (
         <button className={classNameRoot} {...otherProps}>
-            <Trans>
-                {content}
-            </Trans>
+            {(t(content))}
         </button>
     )
 }

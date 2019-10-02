@@ -2,6 +2,7 @@ import React from 'react'
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
+import { useTranslation } from 'react-i18next';
 
 import Chart from 'components/Dashboard/Chart/Chart';
 import TabButton from 'components/Dashboard/Health/TabButton/TabButton';
@@ -26,8 +27,9 @@ const HealthTab = ({ health, healthFilter, healthLastItem, setFilter }) => {
 
         else return [];
     }
+    const { t } = useTranslation();
 
-    document.title = 'Здоровье - Нейролинк';
+    document.title = t('Здоровье - Нейролинк');
 
     const { type } = healthFilter;
 

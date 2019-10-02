@@ -1,13 +1,15 @@
 import React from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { signUp } from '../../store/actions/authActions'
+import { signUp } from '../../store/actions/authActions';
+import { withTranslation } from 'react-i18next';
 import Button from '../Button/Button';
 import TextField from '../TextField/TextField';
-
-import './SignUp.css'
 import H from 'components/Wrapper/H';
 import P from 'components/Wrapper/P';
+
+import './SignUp.css'
+import { compose } from 'C:/Users/danpa/AppData/Local/Microsoft/TypeScript/3.6/node_modules/redux';
 
 class SignUp extends React.Component {
     state = {
@@ -62,7 +64,8 @@ class SignUp extends React.Component {
     render() {
         if (this.props.signUpSuccess) return <Redirect to='/signin' />
 
-        document.title = 'Регистрация - Нейролинк';
+        const { t } = this.props;
+        document.title = t('Регистрация - Нейролинк');
 
         const { deviceIdErr, passwordErr } = this.state;
 
@@ -177,4 +180,4 @@ const mapActionToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapActionToProps)(SignUp);
+export default compose(connect(mapStateToProps, mapActionToProps), withTranslation())(SignUp);
