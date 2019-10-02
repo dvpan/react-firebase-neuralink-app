@@ -1,4 +1,5 @@
 import React from 'react'
+import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
 import { signIn } from '../../store/actions/authActions';
@@ -10,7 +11,6 @@ import P from 'components/Wrapper/P';
 import Link from 'components/Wrapper/Link';
 
 import './SignIn.css'
-import { compose } from 'C:/Users/danpa/AppData/Local/Microsoft/TypeScript/3.6/node_modules/redux';
 
 class SignIn extends React.Component {
     state = {
@@ -81,10 +81,11 @@ class SignIn extends React.Component {
                             Вход
                         </Button>
                     </div>
-                    <P id='signin-block-secondary'>
-                        Еще нет аккаунта?
-                        <Link className='link-blue' to='/signup'> Зарегистрироваться</Link>
-                    </P>
+                    <div id='signin-block-secondary'>
+                        {t("Еще нет аккаунта?")}
+                        {" "}
+                        <Link className='link-blue' to='/signup'>Зарегистрироваться</Link>
+                    </div>
                 </div>
             </div>
         )

@@ -9,18 +9,19 @@ import User from '../User/User';
 
 import { routes } from './headerRoutes.js';
 
-import './HeaderMain.css';
 import { Trans, withTranslation } from 'react-i18next';
-import { compose } from 'C:/Users/danpa/AppData/Local/Microsoft/TypeScript/3.6/node_modules/redux';
+import { compose } from 'redux';
 import LangPicker from '../LangPicker/LangPicker';
 import headerLangConfig from '../headerLangConfig';
+
+import './HeaderMain.css';
 
 class HeaderMain extends React.Component {
     render() {
         const { auth } = this.props;
         let { pathname } = this.props.location;
         if (pathname.includes('dashboard')) pathname = '/dashboard';
-
+        console.log(auth);
         return (
             <nav id='nav-main'>
                 <span>

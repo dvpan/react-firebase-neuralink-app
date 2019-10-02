@@ -1,37 +1,18 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import * as serviceWorker from './serviceWorker';
-import App from './App';
 
-import firebase from 'firebase/app'
-import createReduxStore from './store/createReduxStore';
-import { Provider } from 'react-redux'
-import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
-import { createFirestoreInstance } from 'redux-firestore';
-import i18n from "./i18n";
+import * as serviceWorker from './serviceWorker';
+import SplashScreen from 'components/SplashScreen/SplashScreen';
 
 import './index.css';
+import './App.css';
 
-const store = createReduxStore();
-
-const rrfConfig = {
-    userProfile: 'users',
-    useFirestoreForProfile: true
-}
-
-const rrfProps = {
-    firebase,
-    config: rrfConfig,
-    dispatch: store.dispatch,
-    createFirestoreInstance // <- needed if using firestore
-}
+const App = React.lazy(() => import('App'));
 
 ReactDOM.render(
-    <Provider store={store}>
-        <ReactReduxFirebaseProvider {...rrfProps}>
-            <App />
-        </ReactReduxFirebaseProvider>
-    </Provider>, document.getElementById('root')
+    <Suspense fallback={<SplashScreen />}>
+        <App />
+    </Suspense>, document.getElementById('root')
 );
 
 

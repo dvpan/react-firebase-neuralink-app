@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
-import { useTranslation } from 'react-i18next';
 import Link from 'components/Wrapper/Link';
 import Button from '../../components/Button/Button'
 import TextField from '../../components/TextField/TextField'

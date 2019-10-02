@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { compose } from 'redux';
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { signUp } from '../../store/actions/authActions';
 import { withTranslation } from 'react-i18next';
@@ -7,9 +8,9 @@ import Button from '../Button/Button';
 import TextField from '../TextField/TextField';
 import H from 'components/Wrapper/H';
 import P from 'components/Wrapper/P';
+import Link from 'components/Wrapper/Link';
 
 import './SignUp.css'
-import { compose } from 'C:/Users/danpa/AppData/Local/Microsoft/TypeScript/3.6/node_modules/redux';
 
 class SignUp extends React.Component {
     state = {
@@ -156,10 +157,11 @@ class SignUp extends React.Component {
                             Зарегистрироваться
                         </Button>
                     </div>
-                    <P id='signup-block-secondary'>
-                        Уже есть аккаунт?
-                        <Link className='link-blue' to='/signin'> Войти</Link>
-                    </P>
+                    <div id='signup-block-secondary'>
+                        {t("Уже есть аккаунт?")}
+                        {" "}
+                        <Link className='link-blue' to='/signin'>Войти</Link>
+                    </div>
                 </div>
             </div>
         )

@@ -2,15 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { withTranslation } from 'react-i18next';
 import { signOut } from '../../../store/actions/authActions';
-
 import User from './../User/User';
+import HamButton from './HamButton/HamButton';
+import LangPicker from '../LangPicker/LangPicker';
 
 import './HeaderMobile.css';
-import HamButton from './HamButton/HamButton';
-import { compose } from 'C:/Users/danpa/AppData/Local/Microsoft/TypeScript/3.6/node_modules/redux';
-import { withTranslation } from 'react-i18next';
-import LangPicker from '../LangPicker/LangPicker';
 
 class HeaderMobile extends React.Component {
     state = {
@@ -37,13 +36,9 @@ class HeaderMobile extends React.Component {
 
         return (
             <nav id='nav-mobile'>
-                
-                <Link to='/'>
-                    <div id='header-logo-mobile' />
-                </Link>
-                
-                <LangPicker lang={[{ name: 'English', icon: 'EN', lang: 'en' }, { name: 'Русский', icon: 'РУС', lang: 'ru' }]} />
+                <Link to='/' id='header-logo-mobile' />
 
+                <LangPicker lang={[{ name: 'English', icon: 'EN', lang: 'en' }, { name: 'Русский', icon: 'РУС', lang: 'ru' }]} />
 
                 <HamButton active={isContentVisible} onToggle={this.changeHandler} />
 

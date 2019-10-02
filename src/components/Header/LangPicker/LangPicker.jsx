@@ -26,7 +26,7 @@ const LangPicker = (props) => {
 
             <div variant={`${open}`} className='nav-lang-popup' >
                 {
-                    lang.map(item => <span onClick={() => changeLanguage(item.lang)}>{item.name}</span>)
+                    lang.map(item => <span key={item.lang} onClick={() => changeLanguage(item.lang)}>{item.name}</span>)
                 }
             </div>
         </div>

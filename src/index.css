@@ -4,8 +4,10 @@
   font-display: block;
   font-weight: 400;
   src:
-    url('fonts/Lato-Regular.woff2') format('truetype'),
-    url('fonts/Lato-Regular.ttf') format('truetype');
+    url('fonts/Lato-Regular.eot') format('eot'),
+    url('fonts/Lato-Regular.ttf') format('ttf'),
+    url('fonts/Lato-Regular.woff') format('woff'),
+    url('fonts/Lato-Regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -14,8 +16,10 @@
   font-display: block;
   font-weight: 600;
   src:
-    url('fonts/Lato-Semibold.woff2') format('truetype'),
-    url('fonts/Lato-Semibold.ttf') format('truetype');
+    url('fonts/Lato-Semibold.eot') format('eot'),
+    url('fonts/Lato-Semibold.ttf') format('ttf'),
+    url('fonts/Lato-Semibold.woff') format('woff'),
+    url('fonts/Lato-Semibold.woff2') format('woff2');
 }
 
 @font-face {
@@ -24,8 +28,10 @@
   font-display: block;
   font-weight: 700;
   src:
-    url('fonts/Lato-Bold.woff2') format('truetype'),
-    url('fonts/Lato-Bold.ttf') format('truetype');
+    url('fonts/Lato-Bold.eot') format('eot'),
+    url('fonts/Lato-Bold.ttf') format('ttf'),
+    url('fonts/Lato-Bold.woff') format('woff'),
+    url('fonts/Lato-Bold.woff2') format('woff2');
 }
 
 @font-face {

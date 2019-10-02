@@ -5,8 +5,8 @@ import { compose } from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { withTranslation } from 'react-i18next';
 import Button from '../Button/Button';
-import './Emulator.css';
 import H from 'components/Wrapper/H';
+import './Emulator.css';
 
 class Emulator extends PureComponent {
 
@@ -45,9 +45,9 @@ class Emulator extends PureComponent {
 
         const { heartbeat, bloodPressureTop, bloodPressureBottom, freshness, intoxication, thirsty } = this.state;
         const { t } = this.props;
-        
-        document.title = t( 'Эмулятор - Нейролинк');
-        
+
+        document.title = t('Эмулятор - Нейролинк');
+
         return (
             <div className='emulator-device-container'>
                 <H>
