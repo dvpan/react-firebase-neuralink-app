@@ -75,20 +75,20 @@ class SignUp extends React.Component {
                 <div id='signup-image-block'>
                     <H level={1} id='signup-image-main'>
                         Революционно новый нейроинтерфейс
-                    </H>
+                </H>
                     <P id='signup-image-secondary'>
                         Наш многолетний опыт (более 25 лет) и профессионализм дают возможность создавать технологии нового уровня и расширяют границы для разработчиков и исследователей в самых разных областях человеческих знаний.
-                    </P>
+                </P>
                 </div>
                 <div id='signup-content-block'>
                     <div />
                     <div id='signup-block-main'>
                         <H level={3} id='signup-title-main'>
                             Добро пожаловать на НЕЙРОЛИНК
-                        </H>
+                    </H>
                         <P id='signup-title-secondary'>
                             Перед началом работы заполните форму ниже
-                        </P>
+                    </P>
 
                         <TextField
                             id='firstName'
@@ -155,7 +155,7 @@ class SignUp extends React.Component {
                             fullWidth
                             marginVertical>
                             Зарегистрироваться
-                        </Button>
+                    </Button>
                     </div>
                     <div id='signup-block-secondary'>
                         {t("Уже есть аккаунт?")}

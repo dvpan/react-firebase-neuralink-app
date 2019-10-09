@@ -10,7 +10,7 @@
 #header-logo-clean {
     display: inline-block;
     cursor: pointer;
-    mask: url("../../../ic_head_logo.svg") no-repeat 50% / contain;
+    mask: url("/ic_head_logo.svg") no-repeat 50% / contain;
     background-color: white;
     height: 25px;
     width: 200px;

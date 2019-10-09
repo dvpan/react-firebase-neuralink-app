@@ -5,13 +5,13 @@ import HeaderClean from './Clean/HeaderClean';
 import HeaderMobile from './Mobile/HeaderMobile';
 
 const HeaderComponent = (props) => {
-    const { pathname } = props.location;
+    const { pathname } = props.location;      
 
     switch (pathname) {
         case '/signin': return <HeaderClean />
         case '/signup': return <HeaderClean />
         default: {
-            if (window.innerWidth <= 768) {
+            if (props.mobile) {
                 return <HeaderMobile />
             } else {
                 return <HeaderMain />

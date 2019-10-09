@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMobileDetector } from 'hooks/useMobileDetector';
 import firebase from 'firebase/app'
 import createReduxStore from './store/createReduxStore';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
@@ -10,7 +11,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Footer from './components/Footer/Footer';
 import HeaderComponent from './components/Header/HeaderComponent';
 import Home from './components/Home/Home';
-import Sidebar from './components/Dashboard/Sidebar/Sidebar';
+import SidebarComponent from './components/Dashboard/Sidebar/SidebarComponent';
 import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/Signup/SignUp';
 import HealthTab from './components/Dashboard/Health/HealthTab';
@@ -34,14 +35,16 @@ const rrfProps = {
 }
 
 const App = () => {
+    const { mobile } = useMobileDetector(768);
+
     return (
         <Provider store={store}>
             <ReactReduxFirebaseProvider {...rrfProps}>
                 <BrowserRouter>
                     <div id="main-container">
-                        <HeaderComponent />
+                        <HeaderComponent mobile={mobile} />
                         <div id="main-content">
-                            <Sidebar />
+                            <SidebarComponent mobile={mobile} />
 
                             <Switch>
                                 <Route exact path="/" component={Home} />

@@ -11,7 +11,7 @@
 
 #header-logo-mobile {
     cursor: pointer;
-    mask: url("../../../ic_head_logo.svg") no-repeat 50% / contain;
+    mask: url("/ic_head_logo.svg") no-repeat 50% / contain;
     background-color: var(--main-text-color);
     height: 25px;
     width: 200px;

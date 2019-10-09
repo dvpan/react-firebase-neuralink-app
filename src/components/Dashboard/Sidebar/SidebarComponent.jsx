@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import SidebarDesktop from './Desktop/SidebarDesktop';
 import SidebarMobile from './Mobile/SidebarMobile';
 
-const Sidebar = (props) => {
+const SidebarComponent = (props) => {
     const routes = [
         {
             to: '/dashboard/health',
@@ -33,13 +33,14 @@ const Sidebar = (props) => {
     ];
 
     const { pathname } = props.location;
+
     if (pathname.includes('dashboard')) {
-        if (window.innerWidth > 768) return <SidebarDesktop routes={routes} pathname={pathname} />;
-        else return <SidebarMobile routes={routes} pathname={pathname} />
+        if (props.mobile) return <SidebarMobile routes={routes} pathname={pathname} />
+        else return <SidebarDesktop routes={routes} pathname={pathname} />         
     }
     else {
         return null;
     }
 }
 
-export default withRouter(Sidebar);
+export default withRouter(SidebarComponent);
