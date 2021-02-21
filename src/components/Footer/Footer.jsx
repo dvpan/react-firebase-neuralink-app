@@ -45,10 +45,6 @@ const Footer = (props) => {
                 <section>
                     <H level={4}>Связь с нами</H>
                     <p>
-                        <a className="link-blue" href="mailto:danpanichev137@gmail.com">danpanichev137@gmail.com</a>
-                    </p>
-                    <p>(812) 748-88-55</p>
-                    <p>
                         <SocialButton variant='dark' type='instagram' />
                         <SocialButton variant='dark' type='twitter' />
                         <SocialButton variant='dark' type='facebook' />
